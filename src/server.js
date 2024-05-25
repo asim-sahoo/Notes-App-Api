@@ -15,7 +15,7 @@ mongoose.connect(dbHOST, { useNewUrlParser: true, useUnifiedTopology: true })
         console.log('Connected to MongoDB');
 
         app.get('/', (req, res) => {
-            res.json({ message: 'Server is running' });
+            res.json({ message: 'Server Running Successfully' });
         });
 
         const noteRoutes = require('./routes/Note');
