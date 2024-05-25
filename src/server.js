@@ -3,12 +3,13 @@ const app = express();
 
 const Note = require('./models/Note');
 const mongoose = require('mongoose');
+const dbHOST = process.env.DBHOST;
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb+srv://asimsahoo:asimsahoo1@cluster0.bsktaze.mongodb.net/notesdb").then(function() {
+mongoose.connect(dbHOST).then(function() {
     app.get('/', function(req, res) {
         const response = { message: 'Server is running' };
         res.json(response);
